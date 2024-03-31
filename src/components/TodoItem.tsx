@@ -1,6 +1,8 @@
 "use client";
 
 import { prisma } from "@/db";
+import { useState } from "react";
+import { ConfirmationModal } from "./ConfirmationModal";
 
 type TodoItemProps = {
     id: string
@@ -11,6 +13,7 @@ type TodoItemProps = {
 }
 
 export function TodoItem({id, title, complete, toggleTodo, deleteTodo}: TodoItemProps ) {
+    const [modalConfirm, openModalConfirm] = useState(false);
     return (
         <li className="flex gap-3 items-center justify-between bg-gray-800 rounded-md p-4 w-full">
             <div className="flex gap-3 items-centerw-full">
@@ -21,7 +24,8 @@ export function TodoItem({id, title, complete, toggleTodo, deleteTodo}: TodoItem
                 <label htmlFor={id} className="cursor-pointer peer-checked:line-through text-base peer-checked:text-gray-700">{title}</label>
             </div>
 
-            <button type="button" onClick={e => deleteTodo(id)} className="text-red-500 text-md outline-none">Delete</button>
+            {modalConfirm ? <ConfirmationModal id={id} openModalConfirm={openModalConfirm} deleteTodo={deleteTodo} /> : <></>}
+            <button type="button" onClick={e => openModalConfirm(true)} className="text-red-500 text-md hover:text-red-400 outline-none">Delete</button>
         </li>
     )
 }
