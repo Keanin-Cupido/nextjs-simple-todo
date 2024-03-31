@@ -17,8 +17,8 @@ export function ConfirmationModal({id, openModalConfirm, deleteTodo}: Confirmati
                         <p className="text-gray-300 text-sm">Are you sure you want to delete this todo?</p>
                         <br/>
                         <div className="flex gap-4 justify-center content-center">
-                            <button type="button" onClick={e => openModalConfirm(false)} className="bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-md">Close Modal</button>
                             <button type="button" onClick={e => deleteTodo(id)} className="bg-red-500 hover:bg-red-400 text-white p-2 rounded-md">Delete</button>
+                            <button type="button" onClick={e => openModalConfirm(false)} className="bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-md">Cancel</button>
                         </div>
                     </div>
                 </div>

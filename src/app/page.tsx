@@ -34,7 +34,7 @@ export default async function Home () {
       </header>
       <ul className="container mx-auto flex flex-col justify-start items-start gap-2 w-full max-md:p-4">
         {todos.map(todo => (
-          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+          <TodoItem key={todo.id} {...todo} createdAt={todo.createdAt} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
         ))}
       </ul>
     </>
