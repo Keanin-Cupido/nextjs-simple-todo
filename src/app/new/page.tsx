@@ -18,14 +18,14 @@ async function createTodo(data: FormData) {
 export default function Page(){
     return (
         <>
-          <header className="flex justify-between items-center mb-4">
+          <header className="container mx-auto flex justify-between items-center mb-4 pt-4">
             <h1 className="text-2xl">New Todo</h1>
           </header>
-          <form action={createTodo} className="flex gap-2 flex-col">
-            <input type="text" name="title" className="border border-green-300 bg-transparent px-2 py-1 outline-none focus-within:border-green-100" />
+          <form action={createTodo} className="container mx-auto flex gap-2 flex-col">
+            <input type="text" name="title" className="border border-gray-300 bg-transparent px-2 py-1 outline-none focus-within:border-gray-100" />
             <div className="flex gap-1 justify-end">
-                <Link href=".." className="border border-green-300 bg-transparent px-2 py-1 outline-none hover:bg-green-900 focus-within:border-green-100">Cancel</Link>
-                <button type="submit" className="border border-green-300 bg-transparent px-2 py-1 outline-none hover:bg-green-900 focus-within:border-green-100">Create</button>
+                <Link href=".." className="border border-gray-300 bg-transparent px-2 py-1 outline-none hover:bg-gray-900 focus-within:border-gray-100">Cancel</Link>
+                <button type="submit" className="border border-gray-300 bg-transparent px-2 py-1 outline-none hover:bg-gray-900 focus-within:border-gray-100">Create</button>
             </div>
           </form>
         </>
